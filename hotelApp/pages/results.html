@@ -1,75 +1,18 @@
 <div class="container">
-    <div class="row">
-        <div class="page-header">
-            <h2>{{ hotelResult.name }}</h2>
-            {{ hotelResult.address }}
-            <div id="rating">
-                Rating: {{ hotelResult.rating }}
-            </div>
-        </div>       
-    </div>
+    <!--Hotel title, adress and rating goes here -->
+    <hotel-info></hotel-info>
     
     <!--if there are Images they go here otherwise not shown at all -->
-    <div class="row" ng-if="hotelResult.images.length !== 0">
-        <h3>Images</h3>
-        
-        <div ng-repeat="i in hotelResult.images">
-            <div class="col-xs-6 col-md-3">
-                <a href="#" class="thumbnail">
-                    <img src="{{ i }}" alt="">
-                </a>
-            </div>
-        </div>
-    </div>
+    <hotel-images></hotel-images>
     
     <!--Description goes here -->
-    <div class="row">
-        <h3>Description</h3>
-        <div id="description">
-            {{ hotelResult.description }}
-        </div>
-    </div>
+    <hotel-description></hotel-description>
     
     
     <!--Offers go here -->
-    <div class="row">
-        <h3>Offers</h3>
-        <div ng-repeat="o in hotelResult.offers">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">{{ o.description }}</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="price_per_night">
-                                Price per night: {{ o.price_per_night }} {{o.currency}}
-                            </div>
-                            <div class="price_total">
-                                Total price: {{ o.total }} {{o.currency}}
-                            </div>
-                            <div class="link">
-                                 <a href="{{ o.link }}">link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <hotel-offers></hotel-offers>
     
     <!--Reviews goes here -->
-    <div class="row">
-        <h3>Reviews</h3>
-        <ul class="list-group">
-            <div ng-repeat="r in hotelResult.reviews">
-                <li class="list-group-item">{{ r }}</li>
-            </div>
-        </ul>
-    </div>
-    
-    
-    
-   
+    <hotel-reviews></hotel-reviews>
     
 </div><!--end container -->
