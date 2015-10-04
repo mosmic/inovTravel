@@ -1,0 +1,63 @@
+<html> 
+<head> 
+  <title>My dummy page</title> 
+    <script src="jquery-1.11.3.js"></script>
+    <script type="text/javascript"> 
+        function something() { 
+            var id = "#my-box"; 
+            clazz = ".my-other-box"; 
+  
+            $( "li" ).each(function() { 
+                $( this ).addClass( "foo" ); 
+            }) 
+ 
+            for(i=0;i<$("li").length;i++){ 
+                $(clazz).append('<p style="color: red;padding:2px;">); 
+            } 
+ 
+            $(id).show(); 
+        }
+    </script> 
+</head> 
+<body onload="something();"> 
+  <!-- some cool HTML here -->
+    
+    <ul>    
+        <li>Hello</li>
+        <li>Salut</li>
+        <li>Hola</li>
+    </ul>
+    
+<script>
+
+// (line 4) The best practice is to use the minified version to reduce loading time or
+// even better load it through cdn as it may already exist in user's browser temporary files.
+
+    
+    
+// (line 7) We should cache our variables.Also it's a very bad practice to asign
+// variables with words used natively by the system like id. 
+
+// (line 8) clazz is also a bad name because it is similar to "class" and it's prefered
+// to add var in front of the declaration
+
+// (line 10) This syntax is ignoring jQuery's built in implicit iterator we could just use: 
+//    $( "li" ).addClass( "foo" );
+
+// (line 14) we could simply use the each method of jQuery like :
+//      $("li").each(function() {
+//          $(clazz).append('<p style="color: red;padding:2px;">hi</p>')
+//      });
+
+// (line 22) It is considered a bad practise to mix markup with the code it would be 
+// preferable to put onload inside a script tag window.onload = function x() {...}.
+// Also onload becomes less common because newer onload definitions override older ones. 
+// Using jQuery it's prefered to use $(function()) syntax which refers to the 
+// DOMContentLoaded event which is triggered when the DOM is loaded and not all the elements 
+// like images. Otherwise we use window.onload = x;
+    
+</script>    
+    
+</body>    
+</html> 
+
