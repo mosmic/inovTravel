@@ -1,18 +1,18 @@
 <div class="container">
     <!--Hotel title, adress and rating goes here -->
-    <hotel-info></hotel-info>
+    <hotel-info hotel-object="hotelResult"></hotel-info>
     
-    <!--if there are Images they go here otherwise not shown at all -->
+    <!--If there are Images they go here otherwise not shown at all -->
     <hotel-images></hotel-images>
     
     <!--Description goes here -->
-    <hotel-description></hotel-description>
+    <hotel-description hotel-description="{{ hotelResult.description }}"></hotel-description>
     
     
     <!--Offers go here -->
-    <hotel-offers></hotel-offers>
+    <hotel-offers hotel-offers="hotelResult.offers"></hotel-offers>
     
     <!--Reviews goes here -->
-    <hotel-reviews></hotel-reviews>
+    <hotel-reviews hotel-reviews="hotelResult.reviews"></hotel-reviews>
     
 </div><!--end container -->
